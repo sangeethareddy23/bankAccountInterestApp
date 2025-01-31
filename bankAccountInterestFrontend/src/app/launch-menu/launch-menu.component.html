@@ -1,0 +1,21 @@
+<div class="container text-center mt-5">
+    <h1>Welcome to AwesomeGIC Bank!</h1>
+    <p>What would you like to do?</p>
+    <ul class="list-unstyled">
+      <li>[T] Input transactions</li>
+      <li>[I] Define interest rules</li>
+      <li>[P] Print statement</li>
+      <li>[Q] Quit</li>
+    </ul>
+    <input
+      type="text"
+      placeholder="Enter your choice (T/I/P/Q)"
+      #userInput
+      (keyup.enter)="handleUserAction(userInput.value); userInput.value=''"
+      class="form-control mt-3"
+    />
+  </div>
+  <div *ngIf="userMessage" class="user-message" >
+    <p>{{ userMessage }}</p>
+  </div>
+  

@@ -1,0 +1,186 @@
+.interest-rule-container {
+  position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.626); 
+  }
+  
+  .interest-rule-container h2 {
+    text-align: center;
+    color: #0d0c0c;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .submit-button {
+    width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #218838;
+  }
+
+  
+  .success-message,
+  .error-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .rules-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .rules-table th,
+  .rules-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .rules-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  /* Updated styles for the "Is there anything else you'd like to do?" section */
+.next-action {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: transparent;  /* No container box */
+  text-align: center;
+  display: block; /* Keep it hidden until required */
+}
+
+.next-action h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.next-action ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.next-action li {
+  margin: 10px 0;
+}
+
+.next-action button {
+  background-color: #4CAF50;  /* Fresh Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 12px;
+  width: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.next-action button:hover {
+  background-color: #45a049;  /* Darker Green */
+  transform: scale(1.05);
+}
+
+.next-action button:focus {
+  outline: none;
+}
+
+.next-action button:active {
+  background-color: #388e3c;  /* Even Darker Green */
+}
+
+/* Success and error message styles */
+.success-message,
+.error-message {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.success-message {
+  color: #28a745; /* Green for success */
+}
+
+.error-message {
+  color: #dc3545; /* Red for errors */
+}
+
+/* Adjustments for smaller screen sizes */
+@media (max-width: 600px) {
+  .next-action button {
+    width: 80%;
+    padding: 12px;
+  }
+}
+
+.back-to-home {
+  position: absolute; /* Absolutely position it inside the transaction container */
+  top: 20px; /* 20px from the top */
+  right: 20px; /* 20px from the right */
+  z-index: 1000; /* Ensure the icon is above other elements */
+}
+
+.back-to-home i {
+  font-size: 30px; /* Set the icon size */
+  color: #007bff; /* Blue color for the icon */
+  cursor: pointer; /* Make it clickable */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for color and scaling */
+}
+
+.back-to-home i:hover {
+  color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight grow effect on hover */
+}
+
+.back-to-home i:focus {
+  outline: none;
+}

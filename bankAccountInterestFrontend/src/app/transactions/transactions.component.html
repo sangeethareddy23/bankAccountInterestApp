@@ -1,0 +1,69 @@
+<div class="transaction-container">
+    <h2>Input Transactions</h2>
+    <form (ngSubmit)="submitTransaction()">
+      <div class="form-group">
+        <label for="transactionInput">Enter transaction details in &lt;Date&gt; &lt;Account&gt; &lt;Type&gt; &lt;Amount&gt; format:</label>
+        <input
+          type="text"
+          id="transactionInput"
+          [(ngModel)]="input"
+          name="transactionInput"
+          placeholder="e.g., 20250128 AC001 D 500.00"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  
+    <!-- Success message -->
+    <div *ngIf="successMessage" class="success-message">
+      {{ successMessage }}
+    </div>
+  
+    <!-- Error message -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Account details and transactions -->
+    <div *ngIf="account">
+      <h3>Account: {{ account.accountId }}</h3>
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Txn ID</th>
+            <th>Type</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let txn of transactions">
+            <td>{{ txn.date }}</td>
+            <td>{{ txn.transactionId }}</td>
+            <td>{{ txn.type }}</td>
+            <td>{{ txn.amount | number: '1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div *ngIf="transactionSubmitted" class="next-action">
+      <h3>Is there anything else you'd like to do?</h3>
+      <ul>
+        <li><button (click)="handleUserAction('T')">[T] Input transactions</button></li>
+        <li><button (click)="handleUserAction('I')">[I] Define interest rules</button></li>
+        <li><button (click)="handleUserAction('P')">[P] Print statement</button></li>
+        <li><button (click)="handleUserAction('Q')">[Q] Quit</button></li>
+      </ul>
+    </div>
+
+    <!-- Back to Home Icon -->
+<div class="back-to-home">
+  <i class="fa fa-arrow-left" (click)="navigateToHome()"></i>
+  
+</div>
+
+  </div>
+  

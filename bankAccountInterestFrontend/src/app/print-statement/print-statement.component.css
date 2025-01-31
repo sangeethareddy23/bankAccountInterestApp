@@ -1,0 +1,197 @@
+.print-statement-container {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.626); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.print-statement-container h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #0f0e0e;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #0a0808;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.statement-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+.statement-table th,
+.statement-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.statement-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.statement-table td {
+  font-size: 16px;
+}
+
+.statement-table .highlight-interest {
+  background-color: #d4edda;  /* Green background for interest transactions */
+  color: #155724;
+  font-weight: bold;
+}
+/* Updated styles for the "Is there anything else you'd like to do?" section */
+.next-action {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: transparent;  /* No container box */
+  text-align: center;
+  display: block; /* Keep it hidden until required */
+}
+
+.next-action h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.next-action ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.next-action li {
+  margin: 10px 0;
+}
+
+.next-action button {
+  background-color: #4CAF50;  /* Fresh Green */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 12px;
+  width: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.next-action button:hover {
+  background-color: #45a049;  /* Darker Green */
+  transform: scale(1.05);
+}
+
+.next-action button:focus {
+  outline: none;
+}
+
+.next-action button:active {
+  background-color: #388e3c;  /* Even Darker Green */
+}
+
+.success-message,
+.error-message {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.success-message {
+  color: #28a745;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+/* Adjustments for smaller screen sizes */
+@media (max-width: 600px) {
+  .next-action button {
+    width: 90%;
+    padding: 12px 20px;
+  }
+
+  .print-statement-container {
+    padding: 15px;
+  }
+}
+
+.back-to-home {
+  position: absolute; /* Absolutely position it inside the transaction container */
+  top: 20px; /* 20px from the top */
+  right: 20px; /* 20px from the right */
+  z-index: 1000; /* Ensure the icon is above other elements */
+}
+
+.back-to-home i {
+  font-size: 30px; /* Set the icon size */
+  color: #007bff; /* Blue color for the icon */
+  cursor: pointer; /* Make it clickable */
+  transition: color 0.3s, transform 0.3s; /* Smooth transition for color and scaling */
+}
+
+.back-to-home i:hover {
+  color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.1); /* Slight grow effect on hover */
+}
+
+.back-to-home i:focus {
+  outline: none;
+}

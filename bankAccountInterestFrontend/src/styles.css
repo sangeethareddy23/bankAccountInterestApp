@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+/* Global Body Style for Background */
+body {
+    background-image: url('../../bankAccountInterestFrontend/src/assets/images/SGBG.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Optional, to set a nice default font */
+  }
+  
+
+  
+
+  
+  /* Rest of your existing styles for other elements */
+  

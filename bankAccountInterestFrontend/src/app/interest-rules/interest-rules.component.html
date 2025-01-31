@@ -1,0 +1,59 @@
+<div class="interest-rule-container">
+    <h2>Define Interest Rule</h2>
+    <form (ngSubmit)="submitInterestRule()">
+      <div class="form-group">
+        <label for="input">Please enter interest rule details in &lt;Date&gt; &lt;RuleId&gt; &lt;Rate in %&gt; format:</label>
+        <input
+          type="text"
+          id="input"
+          [(ngModel)]="input"
+          name="input"
+          placeholder="e.g., 20230615 RULE03 2.20"
+          required
+        />
+      </div>
+  
+      <button type="submit" class="submit-button">Submit Rule</button>
+    </form>
+  
+    <!-- Success and Error messages -->
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  
+    <!-- Display the list of interest rules -->
+    <div *ngIf="rules.length">
+      <h3>Interest Rules</h3>
+      <table class="rules-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>RuleId</th>
+            <th>Rate (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rule of rules">
+            <td>{{ rule.date }}</td>
+            <td>{{ rule.ruleId }}</td>
+            <td>{{ rule.rate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div *ngIf="transactionSubmitted" class="next-action">
+        <h3>Is there anything else you'd like to do?</h3>
+        <ul>
+          <li><button (click)="handleUserAction('T')">[T] Input transactions</button></li>
+          <li><button (click)="handleUserAction('I')">[I] Define interest rules</button></li>
+          <li><button (click)="handleUserAction('P')">[P] Print statement</button></li>
+          <li><button (click)="handleUserAction('Q')">[Q] Quit</button></li>
+        </ul>
+      </div>
+      <!-- Back to Home Icon -->
+      <div class="back-to-home">
+        <i class="fa fa-arrow-left" (click)="navigateToHome()"></i>
+      </div>
+      
+
+  </div>
+  

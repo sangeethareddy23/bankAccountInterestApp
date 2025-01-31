@@ -1,0 +1,72 @@
+<div class="print-statement-container">
+    <h2>Print Account Statement</h2>
+    
+    <!-- Console-like input form for Account ID and YearMonth -->
+    <div class="form-group">
+      <label for="input">Please enter account and month to generate the statement &lt;Account&gt; &lt;YearMonth&gt; (or enter blank to go back to main menu):</label>
+      <input
+        type="text"
+        id="input"
+        [(ngModel)]="input"
+        name="input"
+        placeholder="e.g., AC001 202306"
+        required
+      />
+    </div>
+  
+    <button type="button" class="submit-button" (click)="fetchStatement()">Get Statement</button>
+  
+    <!-- Display error message if any -->
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  
+    <!-- Display the statement -->
+    <div *ngIf="statement">
+      <h3>Account Statement for {{ statement.accountId }}</h3>
+      <table class="statement-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Txn ID</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let txn of statement.transactions"
+            [ngClass]="{ 'highlight-interest': txn.type === 'I' }"
+          >
+            <td>{{ txn.date | date: 'yyyy-MM-dd' }}</td> <!-- Format date -->
+            <td>{{ txn.transactionId || '-' }}</td>
+            <td>{{ txn.type }}</td>
+            <td>{{ txn.amount | number: '1.2-2' }}</td>
+            <td>{{ txn.balance || '-' | number: '1.2-2' }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Display interest and final balance -->
+      <p><strong>Interest Earned:</strong> {{ statement.interest | number: '1.2-2' }}</p>
+      <p><strong>Final Balance:</strong> {{ statement.finalBalance | number: '1.2-2' }}</p>
+    </div>
+
+    <div *ngIf="transactionSubmitted" class="next-action">
+        <h3>Is there anything else you'd like to do?</h3>
+        <ul>
+          <li><button (click)="handleUserAction('T')">[T] Input transactions</button></li>
+          <li><button (click)="handleUserAction('I')">[I] Define interest rules</button></li>
+          <li><button (click)="handleUserAction('P')">[P] Print statement</button></li>
+          <li><button (click)="handleUserAction('Q')">[Q] Quit</button></li>
+        </ul>
+      </div>
+      <!-- Back to Home Icon -->
+      <div class="back-to-home">
+        <i class="fa fa-arrow-left" (click)="navigateToHome()"></i>
+      </div>
+      
+
+  </div>
+  
